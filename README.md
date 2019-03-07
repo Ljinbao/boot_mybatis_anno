@@ -2,6 +2,8 @@
 这是一个SpringBoot整合Mybatis的注解版
 后续的更新，主要在此基础上增加其他框架，定时任务调度框架、redis集成、dobbo等
 
+注意一点：我这里也采用了传统的mybati的xml文件。说不定以后有多表关联查询，如果写在注解里面，不是很方便
+
 1.现在SpringBoot2.1.3整合Quartz完成，出现的问题简单整理一下：
 （1）SpringBoot在2.0之前与之后的配置有区别，在项目中我也做了两种配置。
 （2）SpringBoot2.0之后Quartz的容器默认是Spring容器。在写Job类时，我们可以直接注入想要的对象。而在SpringBoot2.0之前，SpringBoot没有集成Quartz所以
