@@ -1,0 +1,22 @@
+
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: UTF-8
+
+#mybatis≈‰÷√
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.lten.boot.pojo
+
+#pagehelper∑÷“≥≤Âº˛
+pagehelper:
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  helper-dialect: mysql
