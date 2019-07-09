@@ -1,11 +1,10 @@
 package com.lten.boot.pojo;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author lijinbao
@@ -14,7 +13,8 @@ import javax.persistence.Table;
  */
 @Table(name = "t_user")
 @Data
-public class User {
+@Accessors(chain = true)
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

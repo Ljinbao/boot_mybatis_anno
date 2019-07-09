@@ -2,6 +2,7 @@ package com.lten.boot.controller;
 
 import com.lten.boot.pojo.User;
 import com.lten.boot.service.UserService;
+import com.lten.boot.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,4 +31,10 @@ public class UserController {
     public List<User> findAllUser(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize){
         return userService.findAllUser(pageNum,pageSize);
     }
+
+    @RequestMapping("/find/{id}")
+    public User findUserById(@PathVariable("id") Integer id){
+        return userService.findUserById(id);
+    }
+
 }

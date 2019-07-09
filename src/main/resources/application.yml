@@ -1,22 +1,46 @@
-
 server:
   port: 8080
 
 spring:
   profiles:
     active: dev
-  http:
-    encoding:
-      charset: UTF-8
+    include: quartz,redis
+  aop:
+    proxy-target-class: false
+    auto: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  security:
+    filter:
+      #过滤器排序
+      order: -100
+      #过滤链分发类型
+      dispatcher-types: request,async,error
+    #自定义用户名和密码
+    user:
+      name: user
+      password:
+      #用户角色
+      roles:
+    #SpringSecurity oauth2
+    oauth2:
+      client:
+        #提供者详细配置信息
+        provider:
+        #客户端登记信息
+        registration:
 
-#mybatis����
-mybatis:
-  mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.lten.boot.pojo
-
-#pagehelper��ҳ���
+#pagehelper分页配置
 pagehelper:
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
   helper-dialect: mysql
+
+logging:
+  level:
+    com:
+      lten:
+        boot: info

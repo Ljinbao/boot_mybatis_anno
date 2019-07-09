@@ -22,5 +22,4 @@ spring:
     #数据库方式
     job-store-type: jdbc
     #初始化表结构
-    #jdbc:
-    #initialize-schema: never
+    initialize-schema: never
